@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片懒加载</title>
+	<style>
+		.show{
+			border:1px solid red;	
+		}
+		.show img{
+			display:-webkit-box;
+			height:200px;
+			width:auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="show">
+		<img data-src="http://meitu91.b0.upaiyun.com/201310/1822/27443c45824ab2a2d2dc9aa37121f5a8.jpg">
+		<img data-src="http://meitu91.b0.upaiyun.com/201312/1713/fcfcdd0a24065d9fb03a1ad6066ae285.jpg">
+		<img data-src="http://meitu91.b0.upaiyun.com/20120112/rosi009/41-94aac8.jpg">
+		<img data-src="http://pic.zhifuok.com/qq32593992/jiepaitupian/a/16/15.jpg">
+		<img data-src="http://pic.zhifuok.com/qq32593992/jinghuaban/meiri/2379.JPG">
+		<img data-src="http://meitu91.b0.upaiyun.com/201310/1822/27443c45824ab2a2d2dc9aa37121f5a8.jpg">
+		<img data-src="http://meitu91.b0.upaiyun.com/201312/1713/fcfcdd0a24065d9fb03a1ad6066ae285.jpg">
+		<img data-src="http://meitu91.b0.upaiyun.com/20120112/rosi009/41-94aac8.jpg">
+	</div>
+	<script src="lazyLoad.js"></script>
+	<script>
+		var lazyload = new LazyLoad({
+			container:".show",
+			delay:500,
+			//pics:2
+		});
+	</script>
+</body>
+</html>
