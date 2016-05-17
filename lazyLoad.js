@@ -40,7 +40,7 @@ function LazyLoad(opt){
 					}
 				}
 			});
-		},500));
+		},delay));
 	})(options);
 	
 	/**
