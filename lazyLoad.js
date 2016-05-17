@@ -30,7 +30,7 @@ function LazyLoad(opt){
 		/**
 		 * [后面需要加入节流函数...]
 		 */
-		window.addEventListener("scroll",function(){
+		window.addEventListener("scroll",_debounce(function(){
 			imgs.forEach(function(item,index){
 				var src = item.src;
 				if(!src){
@@ -40,7 +40,7 @@ function LazyLoad(opt){
 					}
 				}
 			});
-		});
+		},500));
 	})(options);
 	
 	/**
@@ -149,5 +149,28 @@ function LazyLoad(opt){
 			}
 		}
 		return newObj;
+	}
+	/**
+	 * 
+	 */
+	function _debounce(func,wait){
+		var timeout, args, context, timestamp;
+		var later = function(){
+			var last = Date.now()-timestamp;
+			if(last < wait && last > 0){
+				timeout = setTimeout(later, wait - last);
+			}else{
+				timeout = null;
+				func.apply(context, args);
+				if (!timeout) context = args = null;
+			}
+		}
+		return function(){
+			context = this;
+			args = arguments;
+			timestamp = Date.now();
+			// 如果延时不存在，重新设定延时
+			if(!timeout){ timeout = setTimeout(later,wait)};
+		}
 	}
 }
