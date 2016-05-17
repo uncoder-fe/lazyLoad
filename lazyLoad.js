@@ -151,7 +151,7 @@ function LazyLoad(opt){
 		return newObj;
 	}
 	/**
-	 * 
+	 * 防抖处理
 	 */
 	function _debounce(func,wait){
 		var timeout, args, context, timestamp;
