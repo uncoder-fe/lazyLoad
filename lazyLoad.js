@@ -1,7 +1,6 @@
 function LazyLoad(opt){
 	/*** 默认配置选项 */
 	var default_option = {
-		container:'body',
 		delay:300,
 		pics:0
 	}
@@ -11,32 +10,28 @@ function LazyLoad(opt){
 	 * 初始化lazyload
 	 */
 	var init = (function(){
-		var container = options['container'];
 		var delay = options['delay'];
 		var loadIndex = options['pics'];
 		// 暂时只做这个选择
-		var imgs = document.querySelectorAll(container+' img');
+		var imgs = document.querySelectorAll('img[lazy-src]');
 		// 设定了首次加载个数
 		if(loadIndex){
 			imgs.forEach(function(item,index){
 				if(index <= loadIndex-1){
-					item.src = item.dataset['src'];
+					item.src = item.getAttribute('lazy-src');
 				}
 			});
 		}else{
 			// 激活图片平铺迭代器
 			loadFirstScreen(imgs,loadIndex);
 		}
-		/**
-		 * [后面需要加入节流函数...]
-		 */
 		window.addEventListener("scroll",_debounce(function(){
 			imgs.forEach(function(item,index){
 				var src = item.src;
 				if(!src){
 					var status = checkStatus(item);
 					if(status){
-						item.src = item.dataset['src'];
+						item.src = item.getAttribute('lazy-src');
 					}
 				}
 			});
@@ -49,7 +44,7 @@ function LazyLoad(opt){
 	function loadFirstScreen(imgs,index){
 		if(index >= imgs.length){ return;}
 		var img = new Image();
-			img.src = imgs[index].dataset['src'];
+			img.src = imgs[index].getAttribute('lazy-src');
 			img.addEventListener("load",function(){
 				imgs[index].src = this.src;
 				var status = checkStatus(imgs[index]);

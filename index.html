@@ -3,12 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>图片懒加载</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
 	<style>
 		.show{
-			border:1px solid red;	
+			border:1px solid red;
+			text-align: center;	
 		}
 		.show img{
-			display:-webkit-box;
+			display:inline-block;
+			max-width: 100%;
 			height:200px;
 			width:auto;
 		}
@@ -16,19 +26,25 @@
 </head>
 <body>
 	<div class="show">
-		<img data-src="http://meitu91.b0.upaiyun.com/201310/1822/27443c45824ab2a2d2dc9aa37121f5a8.jpg">
-		<img data-src="http://meitu91.b0.upaiyun.com/201312/1713/fcfcdd0a24065d9fb03a1ad6066ae285.jpg">
-		<img data-src="http://meitu91.b0.upaiyun.com/20120112/rosi009/41-94aac8.jpg">
-		<img data-src="http://pic.zhifuok.com/qq32593992/jiepaitupian/a/16/15.jpg">
-		<img data-src="http://pic.zhifuok.com/qq32593992/jinghuaban/meiri/2379.JPG">
-		<img data-src="http://meitu91.b0.upaiyun.com/201310/1822/27443c45824ab2a2d2dc9aa37121f5a8.jpg">
-		<img data-src="http://meitu91.b0.upaiyun.com/201312/1713/fcfcdd0a24065d9fb03a1ad6066ae285.jpg">
-		<img data-src="http://meitu91.b0.upaiyun.com/20120112/rosi009/41-94aac8.jpg">
+		<img lazy-src="http://meitu91.b0.upaiyun.com/201310/1822/27443c45824ab2a2d2dc9aa37121f5a8.jpg">
+		<br>
+		<img lazy-src="http://meitu91.b0.upaiyun.com/201312/1713/fcfcdd0a24065d9fb03a1ad6066ae285.jpg">
+		<br>
+		<img lazy-src="http://meitu91.b0.upaiyun.com/20120112/rosi009/41-94aac8.jpg">
+		<br>
+		<img lazy-src="http://pic.zhifuok.com/qq32593992/jiepaitupian/a/16/15.jpg">
+		<br>
+		<img lazy-src="http://pic.zhifuok.com/qq32593992/jinghuaban/meiri/2379.JPG">
+		<br>
+		<img lazy-src="http://meitu91.b0.upaiyun.com/201310/1822/27443c45824ab2a2d2dc9aa37121f5a8.jpg">
+		<br>
+		<img lazy-src="http://meitu91.b0.upaiyun.com/201312/1713/fcfcdd0a24065d9fb03a1ad6066ae285.jpg">
+		<br>
+		<img lazy-src="http://meitu91.b0.upaiyun.com/20120112/rosi009/41-94aac8.jpg">
 	</div>
 	<script src="lazyLoad.js"></script>
 	<script>
 		var lazyload = new LazyLoad({
-			container:".show",
 			delay:500,
 			//pics:2
 		});
