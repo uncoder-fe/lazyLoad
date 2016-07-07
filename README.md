@@ -3,11 +3,9 @@
 ### 用法
 ```javascript
 var lazyload = new LazyLoad({
-        container:".show",
         delay:500,
         //pics:2
     });
 ```
-- container为容器
 - delay滚动时延迟触发时间
 - pics可以指定首屏加载图片个数，不指定则自动加载首屏
