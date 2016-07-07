@@ -85,13 +85,13 @@ function LazyLoad(opt){
 	 * @return {[obj]} [返回合并后的对象]
 	 */
 	function _extern(toTarget, fromTarget) {
-	    var newFromTarget = _shallowCopy(fromTarget);
-	    var newToTarget = _shallowCopy(toTarget);
-	    var keys = Object.keys(fromTarget);
-	    keys.forEach(function(item, index, arry) {
-	        newToTarget[item] = newFromTarget[item];
-	    });
-	    return newToTarget;
+		var newFromTarget = _shallowCopy(fromTarget);
+		var newToTarget = _shallowCopy(toTarget);
+		var keys = Object.keys(fromTarget);
+		keys.forEach(function(item, index, arry) {
+			newToTarget[item] = newFromTarget[item];
+		});
+		return newToTarget;
 	}
 
 	/**
