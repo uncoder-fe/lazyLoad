@@ -65,7 +65,7 @@ function LazyLoad(opt){
 			});
 	}
 	/**
-	 * 检测距离顶部的位置
+	 * 检测距离顶部的位置，2018年5🈷️3号：可以试试IntersectionObserver这个API来检测。
 	 */
 	function checkStatus(el){
 		/** 窗体高度 */
