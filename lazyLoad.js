@@ -39,7 +39,7 @@ function LazyLoad(opt){
 	})(options);
 	
 	/**
-	 * 迭代加载第一屏所有图片
+	 * 迭代加载第一屏所有图片，2018年5月3号：可以考虑使用Worker预加载
 	 */
 	function loadFirstScreen(imgs,index){
 		if(index >= imgs.length){ return;}
